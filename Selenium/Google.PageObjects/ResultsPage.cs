@@ -24,7 +24,7 @@ namespace Google.PageObjects
         }
 
         /// <remarks>
-        /// Returning search results as strings is a simplification for illustative purposes.
+        /// Returning search results as strings is a simplification for illustrative purposes.
         /// </remarks>
         public IEnumerable<String> Results
         {
