@@ -1,4 +1,5 @@
-﻿using Google.PageObjects;
+﻿using FluentAssertions;
+using Google.PageObjects;
 using Google.Specflow.Selenium;
 using System.Linq;
 using TechTalk.SpecFlow;
@@ -11,18 +12,6 @@ namespace Google.Specflow.Steps
     {
         private readonly SeleniumContext seleniumContext;
 
-        private HomePage Home
-        {
-            get { return ScenarioContext.Current.Get<HomePage>(); }
-            set { ScenarioContext.Current.Set(value); }
-        }
-
-        private ResultsPage Results
-        {
-            get { return ScenarioContext.Current.Get<ResultsPage>(); }
-            set { ScenarioContext.Current.Set(value); }
-        }
-
         public GooglingSteps(SeleniumContext seleniumContext)
         {
             this.seleniumContext = seleniumContext;
@@ -31,21 +20,59 @@ namespace Google.Specflow.Steps
         [Given(@"a user is on the Google UK homepage")]
         public void GivenAUserIsOnTheGoogleUKHomepage()
         {
-            Home = HomePage.NavigateTo(seleniumContext.WebDriver,
-                "GB");
+            Current<HomePage>.Value = 
+                HomePage.NavigateTo(seleniumContext.WebDriver, "GB");
         }
         
         [When(@"the user googles ""(.*)""")]
         public void WhenTheUserGoogles(string term)
         {
-            Results = Home.Google(term);
+            Current<ResultsPage>.Value =
+                Current<HomePage>.Value.Google(term);
         }
         
         [Then(@"the top google result is ""(.*)""")]
         public void ThenTheTopGoogleResultIs(string url)
         {
-            Assert.True(Results.Results.Any(), "The last google returned no results.");
-            Assert.Equal(url, Results.Results.First());
+            Current<ResultsPage>
+                .Value
+                .Results
+                .Any()
+                .Should()
+                .BeTrue("there should be at least one google result.");
+
+            Current<ResultsPage>
+                .Value
+                .Results
+                .First()
+                .Should()
+                .Be(url);
         }
+
+        [When(@"the user googles the site ""(.*)"" for ""(.*)""")]
+        public void WhenTheUserGooglesOnTheSite(string site, string term)
+        {
+            Current<ResultsPage>.Value =
+                Current<HomePage>.Value.Google(site, term);
+        }
+
+        [Then(@"all google results are from ""(.*)""")]
+        public void ThenAllGoogleResultsAreFrom(string url)
+        {
+            Current<ResultsPage>
+                .Value
+                .Results
+                .Any()
+                .Should()
+                .BeTrue("there should be at least one google result.");
+
+            Current<ResultsPage>
+                .Value
+                .Results
+                .All(result => result.Contains(url))
+                .Should()
+                .BeTrue($"all results should be from {url}.");
+        }
+
     }
 }

@@ -90,6 +90,24 @@ testRunner.Then("the top google result is \"https://www.microsoft.com/en-gb\"", 
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute(DisplayName="Googling Service Fabric on Microsoft.com")]
+        [Xunit.TraitAttribute("FeatureTitle", "Googling")]
+        [Xunit.TraitAttribute("Description", "Googling Service Fabric on Microsoft.com")]
+        public virtual void GooglingServiceFabricOnMicrosoft_Com()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Googling Service Fabric on Microsoft.com", ((string[])(null)));
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+testRunner.Given("a user is on the Google UK homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+testRunner.When("the user googles the site \"microsoft.com\" for \"service fabric\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+testRunner.Then("all google results are from \"microsoft.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.3.2.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
