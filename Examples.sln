@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.Tests", "Selenium\Go
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.PageObjects", "Selenium\Google.PageObjects\Google.PageObjects.csproj", "{DBBD51B0-302A-4B12-873F-02C8E4E8D101}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specflow and Selenium", "Specflow and Selenium", "{3682F584-91B7-4C14-BBCF-4FF596C8832B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.Specflow", "Specflow and Selenium\Google.Specflow\Google.Specflow.csproj", "{325BCEEC-29B8-4161-8CCB-A6617061DCC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,10 @@ Global
 		{DBBD51B0-302A-4B12-873F-02C8E4E8D101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBBD51B0-302A-4B12-873F-02C8E4E8D101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBBD51B0-302A-4B12-873F-02C8E4E8D101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325BCEEC-29B8-4161-8CCB-A6617061DCC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325BCEEC-29B8-4161-8CCB-A6617061DCC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325BCEEC-29B8-4161-8CCB-A6617061DCC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325BCEEC-29B8-4161-8CCB-A6617061DCC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B60BC517-35DE-427E-958F-61C146658540} = {1C6ACD7C-1764-4877-9AC3-75E282FF7DFC}
 		{DBBD51B0-302A-4B12-873F-02C8E4E8D101} = {1C6ACD7C-1764-4877-9AC3-75E282FF7DFC}
+		{325BCEEC-29B8-4161-8CCB-A6617061DCC2} = {3682F584-91B7-4C14-BBCF-4FF596C8832B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4B8F516-E039-4D07-AD4D-56B35923C9AD}
