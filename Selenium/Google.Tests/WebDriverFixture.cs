@@ -11,7 +11,7 @@ namespace Google.Tests
         private static IWebDriver DriverFactory()
         {
             //It would be wise to make the WebDriver implementation configurable, so 
-            //the tests can switch between broser without recompilation.
+            //the tests can switch between browser without recompilation.
             return new ChromeDriver();
         }
 
