@@ -24,9 +24,11 @@ namespace Google.PageObjects
         }
 
         /// <remarks>
-        /// Returning search results as strings is a simplification for illustrative purposes.
+        /// Returning search results as Uris is a simplification for illustrative purposes.
+        /// If you were doing this for a GoogleResult object might be required
+        /// containing the url, title, blurb etc.
         /// </remarks>
-        public IEnumerable<String> Results
+        public IEnumerable<Uri> Results
         {
             get
             {
@@ -43,7 +45,7 @@ namespace Google.PageObjects
                     {
                         result = String.Empty;
                     }
-                    yield return result;
+                    yield return new Uri(result);
                 }
             }
         }

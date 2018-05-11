@@ -3,7 +3,6 @@ using Google.PageObjects;
 using Google.Specflow.Selenium;
 using System.Linq;
 using TechTalk.SpecFlow;
-using Xunit;
 
 namespace Google.Specflow.Steps
 {
@@ -69,7 +68,7 @@ namespace Google.Specflow.Steps
             Current<ResultsPage>
                 .Value
                 .Results
-                .All(result => result.Contains(url))
+                .All(result => result.Host.Contains(url))
                 .Should()
                 .BeTrue($"all results should be from {url}.");
         }

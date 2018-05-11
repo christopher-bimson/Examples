@@ -32,7 +32,7 @@ namespace Google.Tests
 
             var results = homePage.Google("microsoft.com", "service fabric blog");
 
-            results.Results.All(r => r.Contains("microsoft.com")).Should().BeTrue();
+            results.Results.All(r => r.Host.Contains("microsoft.com")).Should().BeTrue();
         }
     }
 }
