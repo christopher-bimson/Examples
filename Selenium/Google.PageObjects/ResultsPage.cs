@@ -25,7 +25,7 @@ namespace Google.PageObjects
 
         /// <remarks>
         /// Returning search results as Uris is a simplification for illustrative purposes.
-        /// If you were doing this for a GoogleResult object might be required
+        /// If you were doing this for real a GoogleResult object might be required
         /// containing the url, title, blurb etc.
         /// </remarks>
         public IEnumerable<Uri> Results

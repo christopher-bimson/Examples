@@ -33,19 +33,11 @@ namespace Google.Specflow.Steps
         [Then(@"the top google result is ""(.*)""")]
         public void ThenTheTopGoogleResultIs(string url)
         {
-            Current<ResultsPage>
-                .Value
-                .Results
-                .Any()
-                .Should()
-                .BeTrue("there should be at least one google result.");
+            Current<ResultsPage>.Value.Results.Any()
+                .Should().BeTrue("there should be at least one google result.");
 
-            Current<ResultsPage>
-                .Value
-                .Results
-                .First()
-                .Should()
-                .Be(url);
+            Current<ResultsPage>.Value.Results.First()
+                .Should().Be(url);
         }
 
         [When(@"the user googles the site ""(.*)"" for ""(.*)""")]
@@ -58,19 +50,11 @@ namespace Google.Specflow.Steps
         [Then(@"all google results are from ""(.*)""")]
         public void ThenAllGoogleResultsAreFrom(string url)
         {
-            Current<ResultsPage>
-                .Value
-                .Results
-                .Any()
-                .Should()
-                .BeTrue("there should be at least one google result.");
+            Current<ResultsPage>.Value.Results.Any()
+                .Should().BeTrue("there should be at least one google result.");
 
-            Current<ResultsPage>
-                .Value
-                .Results
-                .All(result => result.Host.Contains(url))
-                .Should()
-                .BeTrue($"all results should be from {url}.");
+            Current<ResultsPage>.Value.Results.All(result => result.Host.Contains(url))
+                .Should().BeTrue($"all results should be from {url}.");
         }
 
     }
