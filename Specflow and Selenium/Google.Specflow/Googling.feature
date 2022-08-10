@@ -14,7 +14,7 @@ When the user googles the site "microsoft.com" for "service fabric"
 Then all google results are from "microsoft.com"
 
 # While they demo the technology adequately, these are not examples of
-# great scenarios. The language isn't greate, and there is no way to control
+# great scenarios. The language isn't great, and there is no way to control
 # the state of the system under test. Under normal circumstances not being 
 # able to put the system into a known state (using Given steps) would make the 
 # tests too fragile to be useful. In fact I would expect these test to fail 
@@ -26,4 +26,6 @@ Then all google results are from "microsoft.com"
 #   b) It's a fairly safe assumption that Microsoft will ensure that they are
 #      always the top search result for "Microsoft"
 #   c) It's unlikely that Microsoft are going to stop using the microsoft.com 
-#      domain any time soon. 
+#      domain any time soon.
+#   d) The point of the example is how to get Specflow and Selenium working together,
+#      not how to write good tests.
